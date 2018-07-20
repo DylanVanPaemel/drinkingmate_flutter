@@ -63,14 +63,14 @@ class CafeRow extends StatelessWidget {
               new Expanded(
                 flex: horizontal ? 1 : 0,
                 child: new Row(children: <Widget>[
-                  new Image.asset("assets/img/ic_distance.png", height: 12.0),
+                  new Image.asset("assets/img/ic_distance.png", height: 15.0),
                   new Container(width: 8.0),
                   new Text("0.6969 km", style: Style.regularTextStyle),
                 ]),
               ),
               new Expanded(
                 child: new Row(children: <Widget>[
-                  new Image.asset("assets/img/ic_gravity.png", height: 12.0),
+                  new Image.asset("assets/img/ic_gravity.png", height: 15.0),
                   new Container(width: 8.0),
                   new Text("hier nog iets", style: Style.regularTextStyle),
                 ]),
@@ -88,7 +88,7 @@ class CafeRow extends StatelessWidget {
           ? new EdgeInsets.only(left: 46.0)
           : new EdgeInsets.only(top: 72.0),
       decoration: new BoxDecoration(
-        color: new Color(0xFF333366),
+        color: new Color(0xFF263238),
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
