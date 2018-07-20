@@ -96,7 +96,7 @@ class CafeRow extends StatelessWidget {
           new BoxShadow(
             color: Colors.black12,
             blurRadius: 10.0,
-            offset: new Offset(0.0, 10.0),
+            offset: new Offset(10.0, 10.0),
           ),
         ],
       ),

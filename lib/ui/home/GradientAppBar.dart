@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GradientAppBar extends StatelessWidget {
 
   final String title;
-  final double barHeight = 66.0;
+  final double barHeight = 40.0;
 
   GradientAppBar(this.title);
 

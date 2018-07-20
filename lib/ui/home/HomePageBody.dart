@@ -14,7 +14,7 @@ class HomePageBody extends StatelessWidget {
           shrinkWrap: false,
           slivers: <Widget>[
             new SliverPadding(
-              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              padding: const EdgeInsets.symmetric(vertical: 0.0),
               sliver: new SliverList(
                 delegate: new SliverChildBuilderDelegate(
                     (context, index) => new CafeRow(cafes[index]),
