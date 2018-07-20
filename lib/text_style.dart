@@ -28,11 +28,12 @@ class Style {
     fontWeight: FontWeight.w400
   );
   static final regularTextStyle = baseTextStyle.copyWith(
-      color: const Color(0xffb6b2df),
+      color: const Color(0xFF18FFFF),
       fontSize: 9.0,
       fontWeight: FontWeight.w400
     );
    static  final subHeaderTextStyle = regularTextStyle.copyWith(
+     color: const Color(0xFF18FFFF),
       fontSize: 12.0
     );
 }

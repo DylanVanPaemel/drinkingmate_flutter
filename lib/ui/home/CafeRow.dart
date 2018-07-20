@@ -24,6 +24,7 @@ class CafeRow extends StatelessWidget {
             child: new Container(
                 decoration: new BoxDecoration(
                     shape: BoxShape.circle,
+                    border: new Border.all(width:3.0,color: Colors.tealAccent),
                     image: new DecorationImage(
                         fit: BoxFit.fill, image: new AssetImage(cafe.logo))))));
 
@@ -55,8 +56,8 @@ class CafeRow extends StatelessWidget {
           new Container(
               margin: new EdgeInsets.symmetric(vertical: 8.0),
               height: 2.0,
-              width: 18.0,
-              color: new Color(0xff00c6ff)),
+              width: 200.0,
+              color: new Color(0xFF64FFDA)), //Streepje
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

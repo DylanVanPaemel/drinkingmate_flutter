@@ -28,16 +28,7 @@ class GradientAppBar extends StatelessWidget {
         ),
       ),
       decoration: new BoxDecoration(
-        gradient: new LinearGradient(
-          colors: [
-            const Color(0xFF37474F),
-            const Color(0xFF263238)
-          ],
-          begin: const FractionalOffset(0.0, 0.0),
-          end: const FractionalOffset(1.0, 0.0),
-          stops: [0.0, 1.0],
-          tileMode: TileMode.clamp
-        ),
+        color: const Color(0xFF64FFDA)
       ),
     );
   }
