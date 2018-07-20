@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "506500344827",
+    "firebase_url": "https://drinkingmate-41e41.firebaseio.com",
+    "project_id": "drinkingmate-41e41",
+    "storage_bucket": "drinkingmate-41e41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506500344827:android:ebf01cc8a178ae5e",
+        "android_client_info": {
+          "package_name": "com.example.drinkingmateflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506500344827-e223u6b6khp7feq7l5dq139p18ao74p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDejMNqhWqiVy9YfbknHjkNFjoAYyre7co"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
