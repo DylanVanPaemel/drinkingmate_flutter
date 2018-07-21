@@ -23,6 +23,7 @@ class DetailPage extends StatelessWidget {
     );
   }
 
+
   Container _getBackground() {
     return new Container(
       decoration: new BoxDecoration(
@@ -44,9 +45,10 @@ class DetailPage extends StatelessWidget {
           horizontal: false,
         ),
         new Container(
+          margin: new EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           padding: new EdgeInsets.symmetric(horizontal: 32.0),
           decoration: new BoxDecoration(
-            color: Colors.blueGrey[900]
+            color: Colors.blueGrey[800]
           ),
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
