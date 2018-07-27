@@ -4,14 +4,13 @@ import 'ui/home/HomePage.dart' as home;
 import 'ui/map/mapPage.dart' as map;
 import 'ui/profile/profilePage.dart' as profile;
 
-
 void main() {
   runApp(new MaterialApp(
     title: "drinkingmate",
     home: new MyTabs(),
-    routes: <String,WidgetBuilder>{
-      'ui/map/mapPage.dart' : (BuildContext context) => new map.Map(),
-    } ,
+    routes: <String, WidgetBuilder>{
+      'ui/map/mapPage.dart': (BuildContext context) => new map.Map(),
+    },
   ));
 }
 
@@ -35,7 +34,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  void openMap(BuildContext context){
+  void openMap(BuildContext context) {
     Navigator.of(context).pushNamed('ui/map/mapPage.dart');
   }
 
@@ -47,21 +46,41 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         backgroundColor: Colors.blueGrey[900],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.map),
-          backgroundColor: Colors.white,
-          foregroundColor: const Color(0xFF64FFDA) ,
-          onPressed: ()  {openMap(context);}
-           
-        ),
+            child: const Icon(Icons.map),
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.blueGrey[900],
+            onPressed: () {
+              openMap(context);
+            }),
         bottomNavigationBar: BottomAppBar(
             shape: CircularNotchedRectangle(),
             child: new Container(
               child: new Material(
                 color: const Color(0xFF64FFDA),
-                child: new TabBar(controller: controller, tabs: <Tab>[
-                  new Tab(icon: new Icon(Icons.home)),
-                  new Tab(icon: new Icon(Icons.person_pin))
-                ]),
+                child: new TabBar(
+                    controller: controller,
+                    labelColor: Colors.blueGrey[900],
+                    unselectedLabelColor: Colors.teal[55],
+                    tabs: <Tab>[
+                      new Tab(
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                             Icon(Icons.home),
+                             Text(" ACTIES")
+                          ],
+                        )),
+              
+                      new Tab(
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                                Icon(Icons.person_pin),
+                                Text(" PROFIEL")
+                          ],
+                        ),
+                      )
+                    ]),
               ),
             )),
         body: new TabBarView(
