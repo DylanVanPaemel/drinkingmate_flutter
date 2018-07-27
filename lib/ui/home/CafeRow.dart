@@ -26,9 +26,9 @@ class CafeRow extends StatelessWidget {
                     shape: BoxShape.circle,
                     border: new Border.all(width:3.0,color: Colors.tealAccent),
                     image: new DecorationImage(
-                        fit: BoxFit.fill, image: new AssetImage(cafe.logo))))));
+                        fit: BoxFit.fill, image: new NetworkImage(cafe.logo))))));
 
-    Widget _planetValue({String value, String image}) {
+  /*   Widget _planetValue({String value, String image}) {
       return new Container(
         child: new Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           new Image.asset(image, height: 12.0),
@@ -37,7 +37,7 @@ class CafeRow extends StatelessWidget {
         ]),
       );
     }
-
+ */
     final cafeCardContent = new Container(
       margin: new EdgeInsets.fromLTRB(
           horizontal ? 130.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
@@ -66,14 +66,14 @@ class CafeRow extends StatelessWidget {
                 child: new Row(children: <Widget>[
                   new Image.asset("assets/img/ic_distance.png", height: 15.0, color: Colors.white),
                   new Container(width: 8.0),
-                  new Text("0.6969 km", style: new TextStyle(color: Colors.white)),
+                  new Text("0.69 km", style: new TextStyle(color: Colors.white)),
                 ]),
               ),
               new Expanded(
                 child: new Row(children: <Widget>[
                   new Image.asset("assets/img/ic_gravity.png", height: 15.0, color: Colors.white),
                   new Container(width: 8.0),
-                  new Text("hier nog iets", style: new TextStyle(color: Colors.white)),
+                  new Text("iets", style: new TextStyle(color: Colors.white)),
                 ]),
               )
             ],
