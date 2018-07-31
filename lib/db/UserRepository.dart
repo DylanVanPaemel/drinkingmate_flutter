@@ -1,11 +1,17 @@
-/* import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class UserRepository{
+class UserRepository {
+  FirebaseUser user;
 
-login(String email,String password) async{
-FirebaseUser user = await
-FirebaseAuth.instance.signInWithEmailAndPassword(email: email,password: password);
+  login(String email, String password) async {
+    try {
+      user = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      print("$user");
+    } catch (e) {}
+  }
 
+  getUser() {
+    return user;
+  }
 }
-
-}  */
