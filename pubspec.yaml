@@ -19,6 +19,9 @@ dependencies:
   shared_preferences: 0.4.2
   diamond_fab: ^0.1.1
   firebase_database: ^1.0.3
+  cached_network_image: 0.4.1+1
+  flutter_cache_manager: ^0.1.1
+  firebase_auth: 0.5.4
 
 
 dev_dependencies:

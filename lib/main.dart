@@ -43,10 +43,15 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     CafeRepository cafeRepository = new CafeRepository();
     cafeRepository.initState();
     return new Scaffold(
-        backgroundColor: Colors.blueGrey[900],
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+       backgroundColor: Colors.blueGrey[900],
+         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.map),
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+               children: <Widget>[
+              Icon(Icons.map, size: 35.0,),
+              //new Text("Kaart"),
+            ],),
             backgroundColor: Colors.white,
             foregroundColor: Colors.blueGrey[900],
             onPressed: () {
@@ -58,25 +63,22 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
               child: new Material(
                 color: const Color(0xFF64FFDA),
                 child: new TabBar(
+                    indicatorColor: Colors.white,
                     controller: controller,
                     labelColor: Colors.blueGrey[900],
                     unselectedLabelColor: Colors.teal[55],
                     tabs: <Tab>[
                       new Tab(
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                             Icon(Icons.home),
-                             Text(" ACTIES")
-                          ],
-                        )),
-              
+                          child: new Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[Icon(Icons.home), Text(" ACTIES")],
+                      )),
                       new Tab(
                         child: new Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                                Icon(Icons.person_pin),
-                                Text(" PROFIEL")
+                            Icon(Icons.person_pin),
+                            Text(" PROFIEL")
                           ],
                         ),
                       )

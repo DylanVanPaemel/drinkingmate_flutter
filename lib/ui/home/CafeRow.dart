@@ -21,23 +21,14 @@ class CafeRow extends StatelessWidget {
         width: 92.0,
         child: new Hero(
             tag: "cafe-hero-${cafe.id}",
-            child: new Container(
+              child: new Container(
                 decoration: new BoxDecoration(
                     shape: BoxShape.circle,
                     border: new Border.all(width:3.0,color: Colors.tealAccent),
-                    image: new DecorationImage(
-                        fit: BoxFit.fill, image: new NetworkImage(cafe.logo))))));
+                    image: new DecorationImage(                
+                        fit: BoxFit.fill, image: cafe.logo)))));
 
-  /*   Widget _planetValue({String value, String image}) {
-      return new Container(
-        child: new Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          new Image.asset(image, height: 12.0),
-          new Container(width: 8.0),
-          new Text("hier nog iets", style: Style.regularTextStyle),
-        ]),
-      );
-    }
- */
+                        
     final cafeCardContent = new Container(
       margin: new EdgeInsets.fromLTRB(
           horizontal ? 130.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
