@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
                     key: formKey,
                     child: new Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[],
+                      children: loginForm(),
                     )))
           ],
         ));
@@ -83,7 +83,6 @@ class _ProfileState extends State<Profile> {
   }
 
   validEmail(value) {
-    // String regex = r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
     String regex =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = new RegExp(regex);

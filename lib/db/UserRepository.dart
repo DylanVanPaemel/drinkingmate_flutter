@@ -7,7 +7,6 @@ class UserRepository {
     try {
       user = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      print("$user");
     } catch (e) {}
   }
 
