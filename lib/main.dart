@@ -58,7 +58,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
               openMap(context);
             }),
         bottomNavigationBar: BottomAppBar(
-            shape: CircularNotchedRectangle(),
+            //shape: CircularNotchedRectangle(),
             child: new Container(
               child: new Material(
                 color: const Color(0xFF64FFDA),
