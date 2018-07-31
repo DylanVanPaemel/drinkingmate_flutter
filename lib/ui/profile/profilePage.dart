@@ -9,7 +9,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
 
-  UserRepository userRepository;
+  //UserRepository userRepository;
   final formKey = new GlobalKey<FormState>();
   String _email;
   String _password;
@@ -25,16 +25,16 @@ class _ProfileState extends State<Profile> {
 
   void validateAndSubmit(){
     if(validateAndSave()){
-        userRepository.login(_email, _password);
+        //userRepository.login(_email, _password);
     }
   }
 
   @override
   Widget build(BuildContext context) {
 
-    if (userRepository == null){
+    /* if (userRepository == null){
       userRepository = new UserRepository();
-    }
+    } */
 
     return new Scaffold(
         backgroundColor: Colors.blueGrey[900],
