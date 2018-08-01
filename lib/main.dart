@@ -40,8 +40,6 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    CafeRepository cafeRepository = new CafeRepository();
-    cafeRepository.initState();
     return new Scaffold(
        backgroundColor: Colors.blueGrey[900],
          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -88,7 +86,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
         body: new TabBarView(
           controller: controller,
           children: <Widget>[
-            new home.HomePage(cafeRepository),
+            new home.HomePage(),
             new profile.Profile()
           ],
         ));
