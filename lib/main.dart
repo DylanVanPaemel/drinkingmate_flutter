@@ -1,8 +1,9 @@
-import 'package:drinkingmate_flutter/db/CafeRepository.dart';
+import 'package:drinkingmate_flutter/db/UserRepository.dart';
 import 'package:flutter/material.dart';
 import 'ui/home/HomePage.dart' as home;
 import 'ui/map/mapPage.dart' as map;
-import 'ui/profile/profilePage.dart' as profile;
+import 'ui/profile/LoginPage.dart' as profile;
+
 
 void main() {
   runApp(new MaterialApp(
@@ -87,7 +88,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
           controller: controller,
           children: <Widget>[
             new home.HomePage(),
-            new profile.Profile()
+            new profile.Profile(userRepository: new UserRepository()),
           ],
         ));
   }

@@ -1,92 +1,15 @@
-import 'package:drinkingmate_flutter/db/UserRepository.dart';
-import 'package:drinkingmate_flutter/ui/profile/GradientAppBar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:drinkingmate_flutter/db/UserRepository.dart';
 
-class Profile extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => new _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
-  UserRepository userRepository;
-  final formKey = new GlobalKey<FormState>();
-  String _email;
-  String _password;
-
-  bool validateAndSave() {
-    final form = formKey.currentState;
-    if (form.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
-  }
-
-  void validateAndSubmit() {
-    if (validateAndSave()) {
-      userRepository.login(_email, _password);
-    }
-  }
+class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (userRepository == null) {
-      userRepository = new UserRepository();
-    }
-    if(userRepository.getUser() == null ){
 
-    }
-
-    return new Scaffold(
-        backgroundColor: Colors.blueGrey[900],
-        resizeToAvoidBottomPadding: false,
-        body: new Column(
-          children: <Widget>[
-            new GradientAppBar("Mijn Profiel"),
-            new Container(
-                padding: EdgeInsets.all(15.0),
-                child: new Form(
-                    key: formKey,
-                    child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: loginForm(),
-                    )))
-          ],
-        ));
-  }
-
-  List<Widget> loginForm() {
-    return [
-      new TextFormField(
-        decoration: new InputDecoration(labelText: 'E-mailadres'),
-        validator: (value) =>
-            validEmail(value) ? null : 'Geen geldig E-mailadres',
-        onSaved: (value) => _email = value,
-      ),
-      new TextFormField(
-        decoration: new InputDecoration(labelText: 'wachtwoord'),
-        obscureText: true,
-        validator: (value) => value.isEmpty ? 'Wachtwoord is leeg' : null,
-        onSaved: (value) => _password = value,
-      ),
-      new Padding(
-        padding: EdgeInsets.all(10.0),
-      ),
-      new RaisedButton(
-        child: new Text(
-          "Inloggen",
-          style: new TextStyle(fontSize: 20.0),
-        ),
-        onPressed: validateAndSubmit,
-      )
-    ];
-  }
-
-  validEmail(value) {
-    String regex =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regExp = new RegExp(regex);
-
-    return regExp.hasMatch(value);
+    return new Container(
+      child: Text("blabla"),
+    );
   }
 }

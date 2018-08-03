@@ -12,15 +12,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   CafeRepository cafeRepository = new CafeRepository();
+  CafeRepository cafeRepository = new CafeRepository();
   bool _isLoading;
 
   @override
   void initState() {
-    super.initState();
-    cafeRepository.initState();
-    _isLoading = true;
-    _loadData();
+    if (this.mounted) {
+      super.initState();
+      cafeRepository.initState();
+      _isLoading = true;
+      _loadData();
+    }
   }
 
   @override
@@ -34,17 +36,22 @@ class _HomePageState extends State<HomePage> {
           ],
         ));
   }
- Future _loadData() async{
-   await new Future.delayed(new Duration(seconds: 1));
-   _dataLoaded();
 
- }
+  Future _loadData() async {
+    if (_isLoading) {
+      await new Future.delayed(new Duration(seconds: 1));
+      _dataLoaded();
+    }
+  }
 
- void _dataLoaded(){
-   setState(() {
+  void _dataLoaded() {
+    if (this.mounted) {
+      setState(() {
         _isLoading = false;
       });
- }
+    }
+  }
+
   getDataOrLoading() {
     if (_isLoading == true) {
       return new Container();
