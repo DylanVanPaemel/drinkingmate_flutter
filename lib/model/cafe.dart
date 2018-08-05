@@ -8,6 +8,8 @@ class Cafe {
   final String regio;
   final CachedNetworkImageProvider logo;
   final String beschrijving;
+  final List<String> activiteiten;
+  final String email;
 
   const Cafe({
     this.id,
@@ -15,6 +17,8 @@ class Cafe {
     this.regio,
     this.beschrijving,
     this.logo,
+    this.activiteiten,
+    this.email
   });
 
   Cafe.fromSnapshot(DataSnapshot snapshot)
@@ -22,7 +26,9 @@ class Cafe {
         naam = snapshot.value["naam"],
         regio = snapshot.value["regio"],
         logo = new CachedNetworkImageProvider(snapshot.value["logo"]),
-        beschrijving = snapshot.value["beschrijving"];
+        beschrijving = snapshot.value["beschrijving"],
+        activiteiten = new List<String>.from(snapshot.value["activiteiten"]),
+        email = snapshot.value["email"];
 }
 
  List<Cafe> cafes = [];

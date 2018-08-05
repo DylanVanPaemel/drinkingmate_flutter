@@ -1,9 +1,8 @@
 import 'dart:async';
-
+import 'package:drinkingmate_flutter/db/CafeRepository.dart';
 import 'package:drinkingmate_flutter/db/UserRepository.dart';
 import 'package:drinkingmate_flutter/ui/profile/GradientAppBar.dart';
 import 'package:drinkingmate_flutter/ui/profile/ProfilePage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -43,48 +42,51 @@ class _ProfileState extends State<Profile> {
         backgroundColor: Colors.blueGrey[900],
         resizeToAvoidBottomPadding: false,
         body: new Column(
-          children: <Widget>[
-            new GradientAppBar("Mijn Profiel"),
-            new Container(
-                padding: EdgeInsets.all(15.0),
-                child: new Form(
-                    key: _formKey,
-                    child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: LoginFormOrProfile(),
-                    ))),
-            loadingSpinner(),
-          ],
+          children: LoginFormOrProfile(),
         ));
   }
 
   List<Widget> LoginFormOrProfile() {
     if (isLoggedIn) {
-      return [new ProfilePage()];
+      return [
+        new GradientAppBar("Mijn Profiel"),
+        new ProfilePage(userRepository)];
     } else {
       return [
-        new TextFormField(
-          decoration: new InputDecoration(labelText: 'E-mailadres'),
-          validator: (value) =>
-              validEmail(value) ? null : 'Geen geldig E-mailadres',
-          onSaved: (value) => _email = value,
-        ),
-        new TextFormField(
-          decoration: new InputDecoration(labelText: 'wachtwoord'),
-          obscureText: true,
-          validator: (value) => value.isEmpty ? 'Wachtwoord is leeg' : null,
-          onSaved: (value) => _password = value,
-        ),
-        new Padding(
-          padding: EdgeInsets.all(10.0),
-        ),
-        new RaisedButton(
-          child: new Text(
-            "Inloggen",
-            style: new TextStyle(fontSize: 20.0),
-          ),
-          onPressed: validateAndSubmit,
-        )
+        new GradientAppBar("Mijn Profiel"),
+        new Container(
+            padding: EdgeInsets.all(15.0),
+            child: new Form(
+                key: _formKey,
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    new TextFormField(
+                      decoration: new InputDecoration(labelText: 'E-mailadres'),
+                      validator: (value) =>
+                          validEmail(value) ? null : 'Geen geldig E-mailadres',
+                      onSaved: (value) => _email = value,
+                    ),
+                    new TextFormField(
+                      decoration: new InputDecoration(labelText: 'wachtwoord'),
+                      obscureText: true,
+                      validator: (value) =>
+                          value.isEmpty ? 'Wachtwoord is leeg' : null,
+                      onSaved: (value) => _password = value,
+                    ),
+                    new Padding(
+                      padding: EdgeInsets.all(10.0),
+                    ),
+                    new RaisedButton(
+                      child: new Text(
+                        "Inloggen",
+                        style: new TextStyle(fontSize: 20.0),
+                      ),
+                      onPressed: validateAndSubmit,
+                    )
+                  ],
+                ))),
+        loadingSpinner(),
       ];
     }
   }

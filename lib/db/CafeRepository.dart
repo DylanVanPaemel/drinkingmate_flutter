@@ -10,11 +10,11 @@ class CafeRepository {
   var cacheManager;
 
   void initState() {
-    cacheManager = CacheManager.getInstance();
-    CacheManager.maxNrOfCacheObjects = 200;
+     cacheManager = CacheManager.getInstance();
+    CacheManager.maxNrOfCacheObjects = 200; 
     final FirebaseDatabase database = FirebaseDatabase.instance;
-    database.setPersistenceEnabled(true);
-    database.setPersistenceCacheSizeBytes(10000000);
+     database.setPersistenceEnabled(true);
+    database.setPersistenceCacheSizeBytes(10000000); 
     itemRef = database.reference().child('cafes');
     itemRef.onChildAdded.listen(_onEntryAdded);
   }
@@ -23,7 +23,7 @@ class CafeRepository {
     cafes.add(Cafe.fromSnapshot(event.snapshot));
   }
 
-  getCafes(){
+  List<Cafe> getCafes(){
     return cafes;
   }
 }

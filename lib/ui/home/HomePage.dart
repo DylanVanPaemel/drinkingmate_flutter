@@ -1,4 +1,5 @@
 import 'package:drinkingmate_flutter/db/CafeRepository.dart';
+import 'package:drinkingmate_flutter/main.dart';
 import 'package:flutter/material.dart';
 import 'GradientAppBar.dart';
 import 'HomePageBody.dart';
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
     if (this.mounted) {
       super.initState();
       cafeRepository.initState();
+      setCafeRepository(cafeRepository);
       _isLoading = true;
       _loadData();
     }

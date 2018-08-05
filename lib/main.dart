@@ -1,9 +1,11 @@
+import 'package:drinkingmate_flutter/db/CafeRepository.dart';
 import 'package:drinkingmate_flutter/db/UserRepository.dart';
 import 'package:flutter/material.dart';
 import 'ui/home/HomePage.dart' as home;
 import 'ui/map/mapPage.dart' as map;
 import 'ui/profile/LoginPage.dart' as profile;
 
+CafeRepository cafeRepo;
 
 void main() {
   runApp(new MaterialApp(
@@ -13,6 +15,14 @@ void main() {
       'ui/map/mapPage.dart': (BuildContext context) => new map.Map(),
     },
   ));
+}
+
+void setCafeRepository(CafeRepository cafeRepository){
+  cafeRepo = cafeRepository;
+}
+
+CafeRepository getCafeRepository(){
+  return cafeRepo;
 }
 
 class MyTabs extends StatefulWidget {
